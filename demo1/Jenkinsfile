@@ -6,7 +6,10 @@ pipeline{
 		stage('Compile Stage'){
 			steps{
 				
-					sh "mvn clean install"
+					sh '''
+          cd demo1
+          mvn clean install
+    '''
 		    }
 	    }	
 	}

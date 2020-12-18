@@ -6,7 +6,7 @@ pipeline{
 		stage('Compile Stage'){
 			steps{
 				
-					sh "mvn -f demo1/pom.​xml clean install"
+					sh "mvn clean install"
 		    }
 	    }	
 	}

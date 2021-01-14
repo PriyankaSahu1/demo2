@@ -1,1 +1,22 @@
 
+pipeline{
+	agent any
+	
+	stages{
+	
+		stage('Compile Stage'){
+			steps{
+				
+					sh '''
+          cd demo1
+          mvn clean install
+    '''
+		    }
+	    }	
+      stage ('Check logs') {
+                    steps {
+                        filterLogs ('WARNING', 1)
+                    }
+                }
+	}
+}

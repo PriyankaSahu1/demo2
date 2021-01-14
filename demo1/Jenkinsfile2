@@ -21,17 +21,10 @@ pipeline{
                  
                  stage ('Check logs') {
                     steps {
-                        filterLogs ('INFO', 1)
+                        filterLogs ('WARNING', 5)
                     }
                 }
-		stage ('check for approval') {
-			when {
-			 expression ( uatInput.buildIsUatApproved() )
-			}
-			steps {
-                        echo "build is approved "
-                    }
-                }
+		
 		
            }	       	     	         
 }
